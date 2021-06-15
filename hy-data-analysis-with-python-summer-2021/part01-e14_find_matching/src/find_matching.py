@@ -1,10 +1,15 @@
-#!/usr/bin/env python3
 
 def find_matching(L, pattern):
-    return []
+    result = []
+
+    for count, value in enumerate(L):
+        if pattern in value:
+            result.append(count)
+
+    return result
 
 def main():
-    pass
+    print(find_matching(["sensitive", "engine", "rubbish", "comment"], "en"))
 
 if __name__ == "__main__":
     main()

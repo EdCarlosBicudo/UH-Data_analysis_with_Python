@@ -1,13 +1,27 @@
-#!/usr/bin/env python3
+import itertools
 
 def detect_ranges(L):
-    return []
+    cL = L.copy()
+    cL.sort()
+    def aux(L):
+        for i, j in itertools.groupby(enumerate(L), lambda x: x[1] - x[0]):
+            j = list(j)
+            start = j[0][1]
+            length = len(j)
+
+            if length == 1:
+                yield start
+            else:
+                yield (start, start+length)
+    return list(aux(cL))
 
 def main():
-    L = [2, 5, 4, 8, 12, 6, 7, 10, 13]
-    result = detect_ranges(L)
+    L = [4, 2, 0, -2, -4]
     print(L)
+    result = detect_ranges(L)
     print(result)
+
+
 
 if __name__ == "__main__":
     main()

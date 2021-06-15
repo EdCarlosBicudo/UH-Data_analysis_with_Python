@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 
 # Don't modify the below hack
 try:
@@ -8,6 +7,10 @@ except ModuleNotFoundError:
 
 def main():
     # Call the functions from here
+    print(triangle.hypothenuse(10, 10))
+    print(triangle.area(10, 10))
+    print(triangle.__version__)
+    print(triangle.__author__)
 
 if __name__ == "__main__":
     main()
