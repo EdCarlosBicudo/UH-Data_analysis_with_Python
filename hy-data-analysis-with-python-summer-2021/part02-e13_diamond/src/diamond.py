@@ -1,12 +1,16 @@
-#!/usr/bin/env python3
 
 import numpy as np
 
 def diamond(n):
-    return np.array([])
+    se = np.eye(n, dtype=int)
+    sd = np.eye(n, dtype=int)[:,::-1][:,:-1]
+    s = np.concatenate((sd, se), axis=1)
+    i = s[::-1][1:]
+    d = np.concatenate((s,i))
+    return d
 
 def main():
-    pass
+    print(diamond(5))
 
 if __name__ == "__main__":
     main()

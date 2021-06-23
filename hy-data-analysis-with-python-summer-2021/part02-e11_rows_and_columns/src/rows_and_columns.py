@@ -1,12 +1,11 @@
-#!/usr/bin/env python3
 
 import numpy as np
 
 def get_rows(a):
-    return []
+    return [row for row in a[::1,]]
 
 def get_columns(a):
-    return []
+    return [row for row in a.T[::1,]]
 
 def main():
     np.random.seed(0)

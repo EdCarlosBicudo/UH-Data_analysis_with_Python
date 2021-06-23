@@ -1,12 +1,13 @@
-#!/usr/bin/env python3
 
 import numpy as np
 
 def get_row_vectors(a):
-    return []
+    _, m = a.shape
+    return [row.reshape(1,m) for row in a[::1,]]
 
 def get_column_vectors(a):
-    return []
+    n, _ = a.shape
+    return [row.reshape(n,1) for row in a.T[::1,]]
 
 def main():
     np.random.seed(0)
